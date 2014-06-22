@@ -642,7 +642,7 @@ void RGBmatrixPanel::updateDisplay(void) {
 		(ptr[i] & 0x10) ? PIN_MAP[B1].gpio_peripheral->BSRR = PIN_MAP[B1].gpio_pin : PIN_MAP[B1].gpio_peripheral->BRR = PIN_MAP[B1].gpio_pin; //B1
 		(ptr[i] & 0x20) ? PIN_MAP[R2].gpio_peripheral->BSRR = PIN_MAP[R2].gpio_pin : PIN_MAP[R2].gpio_peripheral->BRR = PIN_MAP[R2].gpio_pin; //R2
 		(ptr[i] & 0x40) ? PIN_MAP[G2].gpio_peripheral->BSRR = PIN_MAP[G2].gpio_pin : PIN_MAP[G2].gpio_peripheral->BRR = PIN_MAP[G2].gpio_pin; //G2
-		(ptr[i] & 0x80) ? PIN_MAP[B2].gpio_peripheral->BSRR = PIN_MAP[G2].gpio_pin : PIN_MAP[B2].gpio_peripheral->BRR = PIN_MAP[G2].gpio_pin; //B2
+		(ptr[i] & 0x80) ? PIN_MAP[B2].gpio_peripheral->BSRR = PIN_MAP[B2].gpio_pin : PIN_MAP[B2].gpio_peripheral->BRR = PIN_MAP[B2].gpio_pin; //B2
 		PIN_MAP[_sclk].gpio_peripheral->BSRR = PIN_MAP[_sclk].gpio_pin;	//hi
 		PIN_MAP[_sclk].gpio_peripheral->BRR = PIN_MAP[_sclk].gpio_pin;	//lo
 	}
@@ -688,7 +688,8 @@ void RGBmatrixPanel::updateDisplay(void) {
 		(bits & 0x10) ? PIN_MAP[B1].gpio_peripheral->BSRR = PIN_MAP[B1].gpio_pin : PIN_MAP[B1].gpio_peripheral->BRR = PIN_MAP[B1].gpio_pin; //B1
 		(bits & 0x20) ? PIN_MAP[R2].gpio_peripheral->BSRR = PIN_MAP[R2].gpio_pin : PIN_MAP[R2].gpio_peripheral->BRR = PIN_MAP[R2].gpio_pin; //R2
 		(bits & 0x40) ? PIN_MAP[G2].gpio_peripheral->BSRR = PIN_MAP[G2].gpio_pin : PIN_MAP[G2].gpio_peripheral->BRR = PIN_MAP[G2].gpio_pin; //G2
-		(bits & 0x80) ? PIN_MAP[B2].gpio_peripheral->BSRR = PIN_MAP[G2].gpio_pin : PIN_MAP[B2].gpio_peripheral->BRR = PIN_MAP[G2].gpio_pin; //B2		PIN_MAP[_sclk].gpio_peripheral->BSRR = PIN_MAP[_sclk].gpio_pin;	//hi
+		(bits & 0x80) ? PIN_MAP[B2].gpio_peripheral->BSRR = PIN_MAP[B2].gpio_pin : PIN_MAP[B2].gpio_peripheral->BRR = PIN_MAP[B2].gpio_pin; //B2		
+		//PIN_MAP[_sclk].gpio_peripheral->BSRR = PIN_MAP[_sclk].gpio_pin;	//hi
 		PIN_MAP[_sclk].gpio_peripheral->BSRR = PIN_MAP[_sclk].gpio_pin;	//hi
 		PIN_MAP[_sclk].gpio_peripheral->BRR = PIN_MAP[_sclk].gpio_pin;	//lo
     }
